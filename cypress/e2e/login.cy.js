@@ -74,7 +74,7 @@ describe("Walkdog Login", () => {
     });
   });
 
-  context("Login quando o CEP estiver vázio", () => {
+  context("Login quando o CEP estiver errado", () => {
     it("Deve exibir mensagem de erro ao informar CEP  é inválido", () => {
       const loginPage = new LoginPage();
       loginPage.open();
@@ -84,6 +84,26 @@ describe("Walkdog Login", () => {
         email: "joao.silva@example.com",
         cpf: generate(),
         cep: "112222",
+        numero: "123",
+      };
+
+      loginPage.formUser(user.cpf, user.name, user.email);
+
+      loginPage.formEndereco(user.cep);
+      loginPage.shouldDisplayErrorMessage("Informe um CEP válido");
+    });
+  });
+
+  context("Login quando o CEP estiver vázio", () => {
+    it("Deve exibir mensagem de erro ao informar CEP  é inválido", () => {
+      const loginPage = new LoginPage();
+      loginPage.open();
+
+      const user = {
+        name: "João da Silva",
+        email: "joao.silva@example.com",
+        cpf: generate(),
+        cep: "",
         numero: "123",
       };
 
