@@ -7,7 +7,7 @@ module.exports = defineConfig({
     baseUrl: "https://walkdog.vercel.app/signup",
     setupNodeEvents(on, config) {
       // implement node event listeners here
-    },
+    }
   },
   projectId: "2mkvht",
 });
