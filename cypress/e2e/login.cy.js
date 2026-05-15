@@ -74,8 +74,8 @@ describe("Walkdog Login", () => {
     });
   });
 
-  context("Login quando o CEP estiver errado", () => {
-    it("Deve exibir mensagem de erro ao informar CEP  é inválido", () => {
+  context("Erro quando o CEP não é válido", () => {
+    it("Deve exibir mensagem de erro ao co campo do cep quando estiver errado", () => {
       const loginPage = new LoginPage();
       loginPage.open();
 
@@ -92,10 +92,8 @@ describe("Walkdog Login", () => {
       loginPage.formEndereco(user.cep);
       loginPage.shouldDisplayErrorMessage("Informe um CEP válido");
     });
-  });
 
-  context("Login quando o CEP estiver vázio", () => {
-    it("Deve exibir mensagem de erro ao informar CEP  é inválido", () => {
+    it("Deve exibir mensagem de erro ao campo do cep quando estiver vazio ", () => {
       const loginPage = new LoginPage();
       loginPage.open();
 
