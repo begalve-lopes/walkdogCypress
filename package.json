@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "cypress": "^15.15.0"
+  },
+  "dependencies": {
+    "cep-promise": "^4.4.1",
+    "gerador-validador-cpf": "^6.3.0"
+  }
+}
