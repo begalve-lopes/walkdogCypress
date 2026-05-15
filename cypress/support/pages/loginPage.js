@@ -1,5 +1,3 @@
-import cep from "cep-promise";
-
 export class LoginPage {
   open() {
     cy.visit("/");
@@ -12,21 +10,9 @@ export class LoginPage {
     if (cpf) cy.get('[placeholder="CPF somente números"]').type(cpf);
   }
 
-  formEndereco(numero, complemento) {
-    cep("01001000").then((response) => {
-      cy.get('[placeholder="CEP"]').clear().type(response.cep);
-    });
-
-    cy.get('[value="Buscar CEP"]').click();
-
-    cy.get('[placeholder="Número"]').type(numero);
-
-    cy.get('[placeholder="Complemento"]').type(complemento);
-  }
-
-  formEnderecoErrado(cep, numero, complemento) {
+  formEndereco(cep,numero, complemento) {
     cy.get('[placeholder="CEP"]').clear();
-
+   
     if (cep) {
       cy.get('[placeholder="CEP"]').type(cep);
     }
