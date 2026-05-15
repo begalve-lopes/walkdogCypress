@@ -4,16 +4,12 @@ on:
   push:
     branches:
       - main
+
   workflow_dispatch:
 
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
-
-    strategy:
-      fail-fast: false
-      matrix:
-        containers: [1]
 
     steps:
       - name: Checkout
@@ -23,12 +19,8 @@ jobs:
         uses: cypress-io/github-action@v6
 
         with:
-          start: npm start
-          wait-on: "https://walkdog.vercel.app/signup"
-
           record: true
-          parallel: true
 
         env:
-          CYPRESS_RECORD_KEY: ${{ secrets.cypressWalkdogKey }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESSWALKDOGKEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
