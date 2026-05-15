@@ -94,8 +94,8 @@ describe("Walkdog Login", () => {
     });
   });
 
-  context("Login quando o CEP estiver vázio", () => {
-    it("Deve exibir mensagem de erro ao informar CEP  é inválido", () => {
+  context("Login quando todos os campos estão vázio", () => {
+    it("Deve exibir mensagem de erro para todos os campos", () => {
       const loginPage = new LoginPage();
       loginPage.open();
       const validetedUsers = [
