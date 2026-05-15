@@ -3,8 +3,8 @@ import { generate } from "gerador-validador-cpf";
 import { LoginPage } from "../support/pages/loginPage";
 import cep from "cep-promise";
 
-describe("Walkdog Login", () => {
-  context("Login quando o usuário tem cadastro", () => {
+describe("Walkdog Cadastro", () => {
+  context("Cadastro quando o usuário tem cadastro", () => {
     it("Deve fazer login com sucesso", () => {
       const loginPage = new LoginPage();
       loginPage.open();
@@ -30,7 +30,7 @@ describe("Walkdog Login", () => {
     });
   });
 
-  context("Login quando não informa o email válido", () => {
+  context("Cadastro quando não informa o email válido", () => {
     it("Deve exibir mensagem de erro ao informar email é inválido", () => {
       const loginPage = new LoginPage();
       loginPage.open();
@@ -52,7 +52,7 @@ describe("Walkdog Login", () => {
     });
   });
 
-  context("Login quando não informa o cep válido", () => {
+  context("Cadastro quando não informa o cep válido", () => {
     it("Deve exibir mensagem de erro ao informar cep é inválido", () => {
       const loginPage = new LoginPage();
       loginPage.open();
@@ -112,7 +112,7 @@ describe("Walkdog Login", () => {
     });
   });
 
-  context("Login quando todos os campos estão vázio", () => {
+  context("Cadastro quando todos os campos estão vázio", () => {
     it("Deve exibir mensagem de erro para todos os campos", () => {
       const loginPage = new LoginPage();
       loginPage.open();
